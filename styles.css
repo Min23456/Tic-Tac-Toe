@@ -21,7 +21,7 @@ h1{
     grid-template-rows: repeat(3,100px);
     gap: 6px;
     justify-content: center;
-    margin: 0 auto 15 px;
+    margin: 0 auto 15px;
 }
 
 .cell {
