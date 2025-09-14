@@ -23,8 +23,7 @@ function initGame() {
     cells.forEach((cell, index) => {
         cell.addEventListener('click',()=> handleCellClick(index));
     });
-    newGameButton.addEventListener
-}    newGameButton.addEventListener('click', resetGame);
+    newGameButton.addEventListener('click', resetGame);
 }
 
 function handleCellClick (index) {
