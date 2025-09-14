@@ -24,4 +24,21 @@ function initGame() {
         cell.addEventListener('click',()=> handleCellClick(index));
     });
     newGameButton.addEventListener
+}    newGameButton.addEventListener('click', resetGame);
 }
+
+function handleCellClick (index) {
+    // If cell is already filled or game is not active, do nothing
+    if (board[index] !== '' || !gameActive) {
+        return;
+    }
+    // Make the move
+    board[index] = currentPlayer;
+    cells[index].textContent = currentPlayer;
+    cells[index].disabled = true;
+    
+
+    //   Check for Win or Draw
+    checkResult();
+}
+
