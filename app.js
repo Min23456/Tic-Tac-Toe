@@ -41,3 +41,32 @@ function handleCellClick (index) {
     checkResult();
 }
 
+function checkResult() {
+    let roundWon = false;
+    // Check all winning conditions
+    for (let i = 0; i < winningConditions.length; i++) {
+        const [a, b, c] = winningConditions[i];
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+            roundWon = true;
+            break;
+        }  
+    }
+
+
+    if (roundWon) {
+        statusDisplay.textContent = 'Player ${currentPlayer} Wins!';
+        gameActive = false;
+
+        // Disable all cells
+        cells.forEach(cell => {
+            cell.disabled = true;
+        });
+        return;
+    }
+    // Chek for draw
+    if (!board.includes('')) {
+        statusDisplay.textContent = "It's a Draw!";
+        gameActive = false;
+        return;
+    }
+}
