@@ -54,7 +54,7 @@ function checkResult() {
 
 
     if (roundWon) {
-        statusDisplay.textContent = 'Player ${currentPlayer} Wins!';
+        statusDisplay.textContent = `Player ${currentPlayer} Wins!`;
         gameActive = false;
 
         // Disable all cells
