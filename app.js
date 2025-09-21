@@ -69,4 +69,23 @@ function checkResult() {
         gameActive = false;
         return;
     }
+
+
+    // Switch players
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
 }
+
+// Reset the game
+function resetGame() {
+    board = ['','','','','','','','',''];
+    currentPlayer = 'X';
+    gameActive= true;
+    statusDisplay.textContent = 'X goes first';
+    cells.forEach(cell =>{
+        cell.textContent = '';
+        cell.disabled = false;
+    });
+}
+
+initGame();
